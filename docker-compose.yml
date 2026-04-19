@@ -1,0 +1,13 @@
+services:
+  jenkins:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      - USER_CHOCOLATEEN_PASSWORD=hugo_pass
+      - USER_VAUGIE_G_PASSWORD=garance_pass
+      - USER_I_DONT_KNOW_PASSWORD=jeremy_pass
+      - USER_NASSO_PASSWORD=nassim_pass
+    volumes:
+      - ./my_marvin.yml:/var/jenkins_home/my_marvin.yml
+      - ./job_dsl.groovy:/var/jenkins_home/job_dsl.groovy
